@@ -6,29 +6,27 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract womanArtwork is ERC721, Ownable {
+contract Artwork is ERC721, Ownable {
   using Strings for uint256;
   using Counters for Counters.Counter;
 
   Counters.Counter private supply;
 
-  string public uriPrefix = "ipfs://QmXtp5voJYg4yZuvqQRKGLSEwP8eLdmq88F7S7gd7BdyQB/";
+  string public uriPrefix = "ipfs://foobar/"; // TODO
   string public uriSuffix = ".json";
   
   uint256 public cost = 1.00 ether;
   uint256 public maxSupply = 15;
   uint256 public maxMintAmountPerTx = 15;
 
-  address payable commissions = payable(0xE07a6a15cD7E19CF0564327917aD4dd8985217b3); // Tatyana
-  address payable participant1 = payable(0xe93742237eD9B2045798AeAe4D39F6832378acb2); // Anastasia
-  address payable participant2 = payable(0x6ccF4d2Dc91B15BFc3907f0A01f2Abf40a879799); // Ayton
-  address payable participant3 = payable(0xE07a6a15cD7E19CF0564327917aD4dd8985217b3);// Tatyana
-
-
+  address payable commissions = payable(0xfoobar); // TODO
+  address payable participant1 = payable(0xfoobar); // TODO
+  address payable participant2 = payable(0xfoobar); // TODO
+  address payable participant3 = payable(0xfoobar);// TODO
 
   bool public paused = false;
 
-  constructor() ERC721("Woman by Tatyana Bogdanova", "WOMAN") {
+  constructor() ERC721("COLLECTION TITLE", "SYMBOL") { // TODO
   }
 
   modifier mintCompliance(uint256 _mintAmount) {
